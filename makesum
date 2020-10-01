@@ -1,0 +1,10 @@
+cd $1
+rm -f checksums.*
+rm -f /tmp/$1.*
+rm -f /tmp/checksums.*
+find . -print0 -type f | while read -d $'\0' file; do echo "$file:"; echo "-- md5"; md5sum "$file" >> /tmp/$1.md5;echo "-- sha1";sha1sum "$file" >> /tmp/$1.sha1;echo "-- sha256";sha256sum "$file" >> /tmp/$1.sha256;echo "-- sha512";sha512sum "$file" >> /tmp/$1.sha512;echo "-- crc32";crc32 "$file" >> /tmp/$1.crc;done
+mv /tmp/$1.md5 checksums.md5
+mv /tmp/$1.sha1 checksums.sha1
+mv /tmp/$1.crc checksums.crc
+mv /tmp/$1.sha256 checksums.sha256
+mv /tmp/$1.sha512 checksums.sha512

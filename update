@@ -1,0 +1,6 @@
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
+sudo fstrim /home -v
+sudo fstrim / -v
+sudo /usr/sbin/poweroff
