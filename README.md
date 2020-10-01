@@ -5,5 +5,6 @@ So far we have the following:
 
 update: Quickly update and power off/reboot your machine after on Debian-based machines.
 makesum: Run md5sum, sha1sum, sha256sum, sha512sum, and crc32 on a subdirectory recursively. (Doesn't handle absolute paths properly.)
+switch: Alias to quickly change which package provides a binary.
 
 More to come, eventually. Maybe.
